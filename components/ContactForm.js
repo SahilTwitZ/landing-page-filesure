@@ -14,32 +14,38 @@ const ContactForm = () => {
   };
 
   return (
-    <section id="contact" className="py-12 bg-yellow-500 text-white">
-      <div className="container mx-auto">
-        <h3 className="text-3xl font-bold text-center">Contact Us</h3>
-        <form onSubmit={handleSubmit} className="mt-8 max-w-lg mx-auto">
-          <div className="mb-4">
-            <label className="block text-sm font-bold mb-2" htmlFor="email">Email:</label>
+    <section id="contact" className="py-12 bg-gradient-to-r from-yellow-500 to-orange-500 text-white">
+      <div className="container mx-auto px-4">
+        <h3 className="text-4xl font-bold text-center mb-6">Contact Us</h3>
+        <form onSubmit={handleSubmit} className="bg-white rounded-lg shadow-lg p-8 max-w-lg mx-auto">
+          <div className="mb-6">
+            <label className="block text-sm font-bold mb-2 text-gray-700" htmlFor="email">Email:</label>
             <input
               type="email"
               id="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full p-2 border border-gray-300 rounded"
+              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 transition duration-300"
               required
             />
           </div>
-          <div className="mb-4">
-            <label className="block text-sm font-bold mb-2" htmlFor="message">Message:</label>
+          <div className="mb-6">
+            <label className="block text-sm font-bold mb-2 text-gray-700" htmlFor="message">Message:</label>
             <textarea
               id="message"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
-              className="w-full p-2 border border-gray-300 rounded"
+              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 transition duration-300"
+              rows="5"
               required
             />
           </div>
-          <button type="submit" className="w-full p-2 bg-purple-600 text-white rounded">Submit</button>
+          <button
+            type="submit"
+            className="w-full py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-lg font-bold text-lg transition duration-300"
+          >
+            Submit
+          </button>
         </form>
       </div>
     </section>
